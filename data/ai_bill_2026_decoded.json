@@ -1,0 +1,30 @@
+{
+  "title": "Artificial Intelligence Bill, 2026",
+  "what_it_is": "This Bill establishes a legal framework to govern artificial intelligence (AI) in Kenya and creates the Office of the Artificial Intelligence Commissioner. It categorizes AI systems by risk level, imposes transparency and human rights standards, and regulates AI automation in workplaces and public services.",
+  "who_it_affects": "It affects AI developers and providers, businesses and government agencies using automated systems in key sectors, workers whose jobs may be displaced by AI, and members of the public whose data, voice, or image is processed by AI.",
+  "why_it_matters": "It sets strict safeguards against harmful AI uses—such as non-consensual deepfakes, discriminatory algorithms, and sudden job losses—while creating a watchdog to oversee safe technology deployment in Kenya.",
+  "key_dates": [
+    {"label": "Date of Publication", "detail": "19th February, 2026"},
+    {"label": "Date of First Reading in Senate", "detail": "2nd April, 2026"},
+    {"label": "Senate Committee Report Deadline", "detail": "2nd May, 2026"}
+  ],
+  "what_you_can_do": [
+    {
+      "action": "Submit comments or views on the Bill",
+      "where": "Office of the Clerk of the Senate, 1st Floor, Main Parliament Buildings, Nairobi, Kenya, P.O. Box 41842-00100, Nairobi, Kenya, or by email to ictcommittee.senate@parliament.go.ke"
+    }
+  ],
+  "sections": [
+    {"official_text": "Establishes the Office of the Artificial Intelligence Commissioner as an independent state office with perpetual succession and power to sue and be sued.", "plain_explanation": "Creates an independent regulatory office responsible for enforcing AI laws, investigating complaints, and overseeing AI compliance nationwide.", "source_ref": "The Office of the Artificial Intelligence Commissioner"},
+    {"official_text": "Functions include conducting risk assessments, performing conformity audits, assessing high-risk AI, developing guidelines, maintaining a public register of high-risk AI, and investigating complaints.", "plain_explanation": "The AI Commissioner will actively inspect AI systems, handle public grievances, publish a public list of high-risk AI technologies, and create ethical rules.", "source_ref": "Functions of the Office"},
+    {"official_text": "Administrative powers include inspecting premises, demanding information from AI providers, issuing enforcement notices or fines, and summoning persons to give evidence.", "plain_explanation": "The regulatory body has legal powers to audit tech companies, force them to turn over records, summon individuals, and impose financial penalties.", "source_ref": "Administrative Powers"},
+    {"official_text": "Establishes the Advisory Committee on Artificial Intelligence comprising the Commissioner, ministry, ethics, human rights, NACOSTI, county, and civil society representatives.", "plain_explanation": "Creates a broad advisory council made up of experts and government officials to advise the Commissioner on AI governance and public policy.", "source_ref": "The Advisory Committee on Artificial Intelligence"},
+    {"official_text": "Classifies AI systems into four risk levels: unacceptable risk, high risk (critical sectors like health, finance, employment), limited risk, and minimal risk.", "plain_explanation": "AI software will be sorted by risk level, with strict regulations applied to high-risk areas like hiring, healthcare, and banking, and outright bans on unacceptable risks.", "source_ref": "Risk Classification of AI Systems"},
+    {"official_text": "High-risk AI providers must conduct human rights impact assessments, ensure traceability, comply with data protection laws, and obtain consent before using a person's likeness or voice.", "plain_explanation": "Deployers of sensitive AI tools must check for human rights harms, follow data privacy rules, and get explicit permission before using anyone's photo or voice.", "source_ref": "Obligations for High-Risk AI Systems"},
+    {"official_text": "AI deployers must disclose automation levels, explain decision-making, mitigate bias, and ensure rights to human intervention in automated decisions.", "plain_explanation": "Companies must clearly inform citizens when AI is being used to make decisions about them, ensure the software is unbiased, and allow a human to review automated decisions.", "source_ref": "Transparency Measures"},
+    {"official_text": "Providers must conduct workforce impact assessments regarding potential job displacement and implement mitigation measures, including reskilling programs.", "plain_explanation": "If AI technology threatens to eliminate jobs, employers and providers must assess the disruption and help retrain affected workers.", "source_ref": "Workforce Impact Obligations"},
+    {"official_text": "Prohibits generating or distributing AI content using a person's image, voice, or likeness without consent where it causes harm, misinformation, defamation, or privacy infringement.", "plain_explanation": "It is illegal to create or share deepfakes or fake media using someone's voice or appearance without consent if it causes harm or spreads false information.", "source_ref": "Offences and Penalties"},
+    {"official_text": "Serious offences carry fines not exceeding five million shillings, imprisonment up to two years, or both. Corporate directors with knowledge are also liable.", "plain_explanation": "Severe violations face heavy financial penalties and up to two years in jail, and company officers can be held personally liable if they permitted the violation.", "source_ref": "Penalties"},
+    {"official_text": "The Cabinet Secretary must review the Act every three years, consult stakeholders, assess new risks, and report to Parliament within six months.", "plain_explanation": "The government must re-evaluate and update the AI law every three years to keep up with fast-changing technology.", "source_ref": "Periodic Review"}
+  ]
+}

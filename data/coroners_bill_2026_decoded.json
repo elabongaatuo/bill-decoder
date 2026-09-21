@@ -1,0 +1,133 @@
+{
+  "title": "National Coroners Service Bill, 2026",
+  "what_it_is": "This Bill establishes the National Coroners Service as an independent agency to carry out forensic post-mortem investigations into sudden, suspicious, violent, or unnatural deaths across Kenya. It sets formal legal guidelines for preserving death scenes, retaining human tissue, exhuming bodies, and issuing disposal permits. It also establishes strict rules for transporting deceased bodies into and out of the country.",
+  "who_it_affects": "It impacts the general public, bereaved families, medical practitioners, law enforcement officers, prison administrators, and individuals handling body transfers across Kenyan borders.",
+  "why_it_matters": "It ensures that deaths involving foul play, police custody, medical negligence, or unexplained circumstances are impartially and scientifically investigated, protecting public health, human rights, and the administration of justice.",
+  "key_dates": [
+    {
+      "label": "Interim post-mortem report deadline",
+      "detail": "within 24 hours of concluding the post-mortem examination"
+    },
+    {
+      "label": "Final post-mortem report deadline",
+      "detail": "within three months of the examination"
+    },
+    {
+      "label": "Conclusion of post-mortem investigation",
+      "detail": "within three months from the date of becoming aware/being notified"
+    },
+    {
+      "label": "Periodic review of retained tissue samples",
+      "detail": "at least every six months"
+    },
+    {
+      "label": "Notice before applying for exhumation order",
+      "detail": "At least two days' notice of intent to apply shall be given"
+    }
+  ],
+  "what_you_can_do": [
+    {
+      "action": "Report a suspicious or reportable death",
+      "where": "Notify the National Coroners Service or the nearest police officer immediately"
+    },
+    {
+      "action": "Obtain a second post-mortem opinion",
+      "where": "Hire a private qualified medical practitioner at your own cost"
+    },
+    {
+      "action": "Apply to import or export a deceased body",
+      "where": "Submit an application for approval directly to the National Coroners Service"
+    },
+    {
+      "action": "Lodge a complaint against Service decisions",
+      "where": "File a formal complaint with the National Coroners Service Council"
+    }
+  ],
+  "sections": [
+    {
+      "official_text": "There is established a service to be known as the National Coroners Service... a body corporate with perpetual succession.",
+      "plain_explanation": "Creates the National Coroners Service as an independent legal body responsible for investigating reportable deaths.",
+      "source_ref": "Section 7(1)"
+    },
+    {
+      "official_text": "The Service, in the discharge of its functions, shall not be under the direction or control of any person.",
+      "plain_explanation": "Guarantees the independence of the Service from outside political or official pressure, making unlawful influence an offence punishable by fines or jail time.",
+      "source_ref": "Section 9(1)"
+    },
+    {
+      "official_text": "The Council shall competitively recruit and appoint the Coroner-General... Bachelor's degree in medicine and surgery; Master's degree in a field related to human pathology... single non-renewable six-year term.",
+      "plain_explanation": "Establishes qualifications for the head of the Service, requiring a doctor specialized in pathology with forensic training to serve a one-time 6-year term.",
+      "source_ref": "Section 18(1)-(3)"
+    },
+    {
+      "official_text": "The Service shall undertake post-mortem investigations of deaths suspected to be of a criminal nature regardless of faith or other considerations requiring immediate disposal.",
+      "plain_explanation": "Mandates that suspected criminal deaths must undergo forensic investigation even if religious practices advocate for immediate burial.",
+      "source_ref": "Section 29"
+    },
+    {
+      "official_text": "A death is reportable if: due to violence, accident, suspected homicide or suicide; sudden and unexpected; occurred in any form of custody; within 24 hours of surgery... maternal death... child abuse...",
+      "plain_explanation": "Defines all categories of death that legally require an official coroner investigation, including custodial deaths, surgical deaths, maternal deaths, and sudden unexplained fatalities.",
+      "source_ref": "Section 30(2)"
+    },
+    {
+      "official_text": "A person who suspects a reportable death shall immediately notify the Service or a police officer.",
+      "plain_explanation": "Requires members of the public and officials to report suspicious deaths immediately, imposing fines or imprisonment for failing to report or harassing informants.",
+      "source_ref": "Section 31(1)"
+    },
+    {
+      "official_text": "The officer in charge of the place of custody... shall notify the Service immediately upon discovering the deceased.",
+      "plain_explanation": "Requires prison or police commanders to immediately report any death occurring in custody to the Service and relevant oversight bodies like IPOA.",
+      "source_ref": "Section 32(1)"
+    },
+    {
+      "official_text": "A police officer or person present at the death... shall preserve the scene until the Service arrives... Interfering with evidence or the scene commits an offence.",
+      "plain_explanation": "Makes it mandatory for police and bystanders to preserve crime or death scenes, making scene tampering punishable by fines or up to two years in jail.",
+      "source_ref": "Section 34(1)-(3)"
+    },
+    {
+      "official_text": "The Service may authorise an interested person or representative to observe/participate in post-mortem examinations.",
+      "plain_explanation": "Allows close relatives or authorized representatives to apply to observe a post-mortem examination, provided it does not compromise the forensic work.",
+      "source_ref": "Section 37(1)"
+    },
+    {
+      "official_text": "Where tissue is kept for testing, the Service shall, at least every six months, determine whether it should still be retained, disposed of, or stored indefinitely.",
+      "plain_explanation": "Permits the retention of organ or tissue samples for investigation, but mandates regular six-month reviews on whether the tissue must still be kept.",
+      "source_ref": "Section 38(2)"
+    },
+    {
+      "official_text": "An interim report shall be submitted... within 24 hours of concluding the post-mortem examination. A final and conclusive report shall be submitted within three months...",
+      "plain_explanation": "Sets strict deadlines for sending initial forensic findings to prosecutors within 24 hours and completing the final investigation report within three months.",
+      "source_ref": "Section 40(3)-(4)"
+    },
+    {
+      "official_text": "a report under section 40 is prima facie evidence as to cause of death.",
+      "plain_explanation": "Makes official coroner post-mortem reports legally valid primary evidence of cause of death in criminal and civil court proceedings.",
+      "source_ref": "Section 43(1)"
+    },
+    {
+      "official_text": "A dissatisfied person may, at their own cost, seek another opinion from a medical practitioner.",
+      "plain_explanation": "Grants family members or interested parties who disagree with the findings the right to pay for an independent second medical post-mortem opinion.",
+      "source_ref": "Section 44(1)"
+    },
+    {
+      "official_text": "The Service may apply to the High Court for an order to exhume a buried body or recover cremated remains.",
+      "plain_explanation": "Allows the Service to obtain High Court permission to exhume bodies for investigation, requiring prior notice to cemetery managers and family where practical.",
+      "source_ref": "Section 48(1)-(2)"
+    },
+    {
+      "official_text": "The State shall bear the cost of post-mortem examinations conducted by the Service.",
+      "plain_explanation": "Ensures that citizens are not charged for official post-mortem investigations carried out by the National Coroners Service.",
+      "source_ref": "Section 49"
+    },
+    {
+      "official_text": "A person intending to transfer a body out of Kenya [or into Kenya] shall apply to the Service for approval.",
+      "plain_explanation": "Requires formal written authorization from the Service before any human body can be imported into or exported out of Kenya.",
+      "source_ref": "Section 50(1) & 51(1)"
+    },
+    {
+      "official_text": "The Council may investigate complaints against Service decisions on whether to conduct a post-mortem examination, access, tissue retention, or body transfer.",
+      "plain_explanation": "Establishes an internal appeals process allowing citizens to complain to the Council if they disagree with administrative decisions made by coroners.",
+      "source_ref": "Section 63(1)"
+    }
+  ]
+}

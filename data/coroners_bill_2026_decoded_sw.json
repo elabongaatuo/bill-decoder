@@ -1,0 +1,133 @@
+{
+  "title": "Mswada wa Huduma ya Kitaifa ya Wakorona (wanaochunguza visababisho vya kifo), 2026",
+  "what_it_is": "Mswada huu unaunda Huduma ya Kitaifa ya Wakorona kama shirika huru la kufanya uchunguzi wa kitaalamu wa maiti kwa vifo vya ghafla, vya kutatanisha, vya kikatili, au visivyo vya asili kote nchini Kenya. Unaweka miongozo rasmi ya kisheria ya kuhifadhi maeneo ya vifo, kuhifadhi tishu zabinadamu, kufukua miili, na kutoa vibali vya kuzika au kutupa miili. Pia unaweka sheria kali za kusafirisha miili ya watu waliofariki ndani na nje ya nchi.",
+  "who_it_affects": "Unawahusu wananchi kwa ujumla, familia zilizoefiwa, madaktari, maafisa wa polisi, wasimamizi wa magereza, na watu wanaoshughulikia usafirishaji wa miili kupitia mipaka ya Kenya.",
+  "why_it_matters": "Unahakikisha kuwa vifo vinavyohusisha uhalifu, vifo gerezani, uzembe wa kimatibabu, au hali zisizoeleweka vinachunguzwa kwa njia huru na ya kisayansi, jambo linalolinda afya ya umma, haki za binadamu, na utekelezaji wa sheria.",
+  "key_dates": [
+    {
+      "label": "Muda wa mwisho wa ripoti ya awali ya maiti",
+      "detail": "ndani ya saa 24 baada ya kukamilisha uchunguzi wa maiti"
+    },
+    {
+      "label": "Muda wa mwisho wa ripoti ya mwisho ya maiti",
+      "detail": "ndani ya miezi mitatu baada ya uchunguzi"
+    },
+    {
+      "label": "Muda wa kukamilisha uchunguzi wa maiti",
+      "detail": "ndani ya miezi mitatu tangu tarehe ya kupata habari au kuarifiwa"
+    },
+    {
+      "label": "Uhakiki wa mara kwa mara wa sampuli za tishu zilizohifadhiwa",
+      "detail": "angalau kila baada ya miezi sita"
+    },
+    {
+      "label": "Notisi kabla ya kuomba agizo la kufukua mwili",
+      "detail": "Notisi ya angalau siku mbili ya nia ya kuomba ni lazima itolewe"
+    }
+  ],
+  "what_you_can_do": [
+    {
+      "action": "Ripoti kifo cha kutatanisha au kinachopaswa kuripotiwa",
+      "where": "Taarifu Huduma ya Kitaifa ya Wakorona au afisa wa polisi aliye karibu nawe mara moja"
+    },
+    {
+      "action": "Pata maoni ya pili ya daktari kuhusu maiti",
+      "detail": "Ajiri daktari mtaalamu wa kibinafsi kwa gharama yako mwenyewe"
+    },
+    {
+      "action": "Omba kuingiza au kutoa mwili wa marehemu nchini",
+      "where": "Wasilisha ombi la idhini moja kwa moja kwa Huduma ya Kitaifa ya Wakorona"
+    },
+    {
+      "action": "Lalamika dhidi ya maamuzi ya Huduma",
+      "where": "Wasilisha malalamiko rasmi kwa Baraza la Huduma ya Kitaifa ya Wakorona"
+    }
+  ],
+  "sections": [
+    {
+      "official_text": "There is established a service to be known as the National Coroners Service... a body corporate with perpetual succession.",
+      "plain_explanation": "Inaunda Huduma ya Kitaifa ya Wakorona kama chombo huru cha kisheria kinachohusika na kuchunguza vifo vinavyopaswa kuripotiwa.",
+      "source_ref": "Section 7(1)"
+    },
+    {
+      "official_text": "The Service, in the discharge of its functions, shall not be under the direction or control of any person.",
+      "plain_explanation": "Inahakikisha uhuru wa Huduma dhidi ya shinikizo za kisiasa au za kiofisi, na kufanya uingiliaji usio halali kuwa kosa linalostahili faini au kifungo gerezani.",
+      "source_ref": "Section 9(1)"
+    },
+    {
+      "official_text": "The Council shall competitively recruit and appoint the Coroner-General... Bachelor's degree in medicine and surgery; Master'sdegree in a field related to human pathology... single non-renewable six-year term.",
+      "plain_explanation": "Inaweka sifa za kiongozi wa Huduma, ikihitaji daktari bingwa wa patholojia aliye na mafunzo ya uchunguzi wa maiti ili ahudumu kwa muhula mmoja wa miaka 6.",
+      "source_ref": "Section 18(1)-(3)"
+    },
+    {
+      "official_text": "The Service shall undertake post-mortem investigations of deaths suspected to be of a criminal nature regardless of faith or other considerations requiring immediate disposal.",
+      "plain_explanation": "Inaamuru kwamba vifo vinavyoshukiwa kuwa vya kihalifu lazima vifanyiwe uchunguzi wa kitaalamu hata kama mila za kidini zinahimiza kuzikwa mara moja.",
+      "source_ref": "Section 29"
+    },
+    {
+      "official_text": "A death is reportable if: due to violence, accident, suspected homicide or suicide; sudden and unexpected; occurred in any form of custody; within 24 hours of surgery... maternal death... child abuse...",
+      "plain_explanation": "Inafafanua kategoria zote za vifo ambavyo kisheria vinahitaji uchunguzi wa wakorona, ikiwa ni pamoja na vifo gerezani, vifo baada ya upasuaji, vifo vya uzazi, na vifo vya ghafla visivyoeleweka.",
+      "source_ref": "Section 30(2)"
+    },
+    {
+      "official_text": "A person who suspects a reportable death shall immediately notify the Service or a police officer.",
+      "plain_explanation": "Inawataka wananchi na maafisa kuripoti vifo vya kutatanisha mara moja, na inaweka faini au kifungo kwa watakaoshindwa kuripoti au kuwasumbua watoa taarifa.",
+      "source_ref": "Section 31(1)"
+    },
+    {
+      "official_text": "The officer in charge of the place of custody... shall notify the Service immediately upon discovering the deceased.",
+      "plain_explanation": "Inawajibisha makamanda wa magereza au polisi kuripoti mara moja kifo chochote kinachotokea kizuizini kwa Huduma na vyombo vingine vya usimamizi kama IPOA.",
+      "source_ref": "Section 32(1)"
+    },
+    {
+      "official_text": "A police officer or person present at the death... shall preserve the scene until the Service arrives... Interfering with evidence or the scene commits an offence.",
+      "plain_explanation": "Inawalazimisha polisi na watu walio karibu kuhifadhi eneo la kifo au uhalifu, na kufanya uharibifu wa ushahidi kuwa kosa linalostahili faini au hadi miaka miwili jela.",
+      "source_ref": "Section 34(1)-(3)"
+    },
+    {
+      "official_text": "The Service may authorise an interested person or representative to observe/participate in post-mortem examinations.",
+      "plain_explanation": "Inaruhusu ndugu wa karibu au wawakilishi walioidhinishwa kuomba kutazama uchunguzi wa maiti, mradi tu haivurugi kazi ya kichunguzi.",
+      "source_ref": "Section 37(1)"
+    },
+    {
+      "official_text": "Where tissue is kept for testing, the Service shall, at least every six months, determine whether it should still be retained,disposed of, or stored indefinitely.",
+      "plain_explanation": "Inaruhusu kuhifadhiwa kwa sampuli za viungo au tishu kwa ajili ya uchunguzi, lakini inaamuru uhakiki wa mara kwa mara wa kila miezi sita kuhusu iwapo tishu hizo zinapaswa kuendelea kuhifadhiwa.",
+      "source_ref": "Section 38(2)"
+    },
+    {
+      "official_text": "An interim report shall be submitted... within 24 hours of concluding the post-mortem examination. A final and conclusive report shall be submitted within three months...",
+      "plain_explanation": "Inaweka muda mkali wa kutuma matokeo ya awali kwa waendesha mashtaka ndani ya saa 24 na kukamilisha ripoti ya mwisho ya uchunguzi ndani ya miezi mitatu.",
+      "source_ref": "Section 40(3)-(4)"
+    },
+    {
+      "official_text": "a report under section 40 is prima facie evidence as to cause of death.",
+      "plain_explanation": "Inafanya ripoti rasmi za wakorona kuwa ushahidi mkuu wa kisheria kuhusu chanzo cha kifo katika kesi za mahakamani za jinaina madai.",
+      "source_ref": "Section 43(1)"
+    },
+    {
+      "official_text": "A dissatisfied person may, at their own cost, seek another opinion from a medical practitioner.",
+      "plain_explanation": "Inawapa wanafamilia au pande husika zisizokubaliana na matokeo haki ya kulipia maoni ya pili ya daktari mwingine.",
+      "source_ref": "Section 44(1)"
+    },
+    {
+      "official_text": "The Service may apply to the High Court for an order to exhume a buried body or recover cremated remains.",
+      "plain_explanation": "Inaruhusu Huduma kupata idhini ya Mahakama Kuu kufukua miili kwa ajili ya uchunguzi, ikihitaji taarifa ya awali kwa wasimamizi wa makaburi na familia inapowezekana.",
+      "source_ref": "Section 48(1)-(2)"
+    },
+    {
+      "official_text": "The State shall bear the cost of post-mortem examinations conducted by the Service.",
+      "plain_explanation": "Inahakikisha kuwa wananchi hawalipishwi ada kwa ajili ya uchunguzi rasmi wa maiti unaofanywa na Huduma ya Kitaifa ya Wakorona.",
+      "source_ref": "Section 49"
+    },
+    {
+      "official_text": "A person intending to transfer a body out of Kenya [or into Kenya] shall apply to the Service for approval.",
+      "plain_explanation": "Inahitaji idhini rasmi ya maandishi kutoka kwa Huduma kabla ya mwili wowote kuingizwa au kutolewa nchini Kenya.",
+      "source_ref": "Section 50(1) & 51(1)"
+    },
+    {
+      "official_text": "The Council may investigate complaints against Service decisions on whether to conduct a post-mortem examination, access, tissue retention, or body transfer.",
+      "plain_explanation": "Inaunda mfumo wa ndani wa rufaa unaowaruhusu wananchi kulalamika kwa Baraza iwapo hawakubaliani na maamuzi ya kiutawala yaliyofanywa na wakorona.",
+      "source_ref": "Section 63(1)"
+    }
+  ]
+}

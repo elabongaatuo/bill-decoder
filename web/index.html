@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bill Bridge</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+    color: #1a1a1a;
+    background: #fafaf8;
+  }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .api-config { font-size: 12px; color: #888; margin-bottom: 24px; }
+  .api-config input {
+    font-size: 12px; padding: 4px 8px; width: 260px;
+    border: 1px solid #ccc; border-radius: 4px;
+  }
+
+  .bill-list { display: flex; flex-direction: column; gap: 10px; }
+  .bill-card {
+    border: 1px solid #ddd; border-radius: 10px; padding: 14px 16px;
+    background: white; cursor: pointer; transition: border-color 0.15s;
+  }
+  .bill-card:hover { border-color: #999; }
+  .bill-card h3 { margin: 0 0 4px; font-size: 16px; }
+  .bill-card .stage {
+    display: inline-block; font-size: 11px; padding: 2px 8px;
+    border-radius: 10px; background: #eef; color: #339; margin-top: 4px;
+  }
+
+  .back-link { display: inline-block; margin-bottom: 16px; color: #339; cursor: pointer; font-size: 14px; }
+
+  .section { margin-bottom: 20px; }
+  .section h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; color: #888; margin-bottom: 6px; }
+  .section p { margin: 0; line-height: 1.5; }
+
+  .lang-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
+  .lang-toggle button {
+    padding: 6px 14px; border-radius: 20px; border: 1px solid #ccc;
+    background: white; cursor: pointer; font-size: 13px;
+  }
+  .lang-toggle button.active { background: #333; color: white; border-color: #333; }
+
+  .date-item, .action-item { padding: 8px 0; border-bottom: 1px solid #eee; }
+  .date-item:last-child, .action-item:last-child { border-bottom: none; }
+  .date-label, .action-label { font-weight: 600; font-size: 14px; }
+  .date-detail, .action-where { font-size: 13px; color: #555; }
+
+  details.source-block { border: 1px solid #eee; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
+  details.source-block summary { cursor: pointer; font-size: 14px; }
+  .official-text { font-size: 12px; color: #777; font-style: italic; margin-top: 8px; padding: 8px; background: #f5f5f0; border-radius: 6px; }
+  .source-ref { font-size: 11px; color: #999; margin-top: 4px; }
+
+  .vote-row { display: flex; gap: 10px; margin-bottom: 24px; }
+  .vote-btn {
+    flex: 1; padding: 12px; border-radius: 10px; border: 1px solid #ccc;
+    background: white; cursor: pointer; font-size: 14px; text-align: center;
+  }
+  .vote-btn.support:hover { border-color: #2a7; }
+  .vote-btn.oppose:hover { border-color: #c33; }
+  .vote-count { font-size: 20px; font-weight: 700; display: block; }
+
+  .comment { border-bottom: 1px solid #eee; padding: 10px 0; }
+  .comment .nickname { font-weight: 600; font-size: 13px; }
+  .comment .body { font-size: 14px; margin-top: 2px; }
+  .comment .time { font-size: 11px; color: #999; }
+
+  .comment-form { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .comment-form input, .comment-form textarea {
+    padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 14px;
+  }
+  .comment-form textarea { resize: vertical; min-height: 60px; }
+  .comment-form button {
+    padding: 10px; border-radius: 8px; border: none; background: #333; color: white; cursor: pointer; font-size: 14px;
+  }
+
+  .error-msg { color: #c33; font-size: 13px; margin-top: 6px; }
+  .loading { color: #999; font-size: 14px; padding: 20px 0; }
+  .disclaimer { font-size: 11px; color: #999; margin-top: 30px; border-top: 1px solid #eee; padding-top: 12px; }
+</style>
+</head>
+<body>
+
+<h1>Bill Bridge</h1>
+<p class="subtitle">Kenyan parliamentary bills, decoded in plain language — no sign-in required.</p>
+
+<div class="api-config">
+  API base URL:
+  <input id="apiBaseInput" value="http://localhost:8000" onchange="setApiBase(this.value)">
+</div>
+
+<div id="app"><div class="loading">Loading bills...</div></div>
+
+<script>
+let API_BASE = localStorage.getItem("billBridgeApiBase") || "http://localhost:8000";
+document.getElementById("apiBaseInput").value = API_BASE;
+
+function setApiBase(v) {
+  API_BASE = v.replace(/\/$/, "");
+  localStorage.setItem("billBridgeApiBase", API_BASE);
+  route();
+}
+
+let currentLang = "en";
+
+async function api(path, options) {
+  const res = await fetch(API_BASE + path, {
+    headers: { "Content-Type": "application/json" },
+    ...options,
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new Error(body.detail || `Request failed (${res.status})`);
+  }
+  return res.json();
+}
+
+function escapeHtml(s) {
+  const div = document.createElement("div");
+  div.textContent = s || "";
+  return div.innerHTML;
+}
+
+async function route() {
+  const hash = window.location.hash.slice(1);
+  if (hash.startsWith("bill/")) {
+    renderBillDetail(parseInt(hash.split("/")[1], 10));
+  } else {
+    renderBillList();
+  }
+}
+window.addEventListener("hashchange", route);
+
+async function renderBillList() {
+  const app = document.getElementById("app");
+  app.innerHTML = '<div class="loading">Loading bills...</div>';
+  try {
+    const bills = await api("/bills");
+    if (bills.length === 0) {
+      app.innerHTML = '<p class="loading">No bills loaded yet. Run seed_bills.py against your backend first.</p>';
+      return;
+    }
+    app.innerHTML = '<div class="bill-list">' + bills.map(b => `
+      <div class="bill-card" onclick="window.location.hash='bill/${b.id}'">
+        <h3>${escapeHtml(b.title)}</h3>
+        <span class="stage">${escapeHtml(b.stage || "introduced")}</span>
+      </div>
+    `).join("") + "</div>";
+  } catch (e) {
+    app.innerHTML = `<p class="error-msg">Could not reach the API at ${escapeHtml(API_BASE)} — ${escapeHtml(e.message)}. Confirm your backend is running and the API base URL above is correct.</p>`;
+  }
+}
+
+async function renderBillDetail(billId) {
+  const app = document.getElementById("app");
+  app.innerHTML = '<div class="loading">Loading bill...</div>';
+  currentLang = "en";
+  try {
+    const [bill, comments] = await Promise.all([
+      api(`/bills/${billId}`),
+      api(`/bills/${billId}/comments`),
+    ]);
+    renderBillDetailView(bill, comments);
+  } catch (e) {
+    app.innerHTML = `<p class="error-msg">Could not load this bill — ${escapeHtml(e.message)}</p>`;
+  }
+}
+
+function renderBillDetailView(bill, comments) {
+  const app = document.getElementById("app");
+  const decoded = currentLang === "sw" && bill.decoded_sw ? bill.decoded_sw : bill.decoded_en;
+  const swAvailable = !!bill.decoded_sw;
+
+  const datesHtml = (decoded.key_dates || []).map(d => `
+    <div class="date-item">
+      <div class="date-label">${escapeHtml(d.label)}</div>
+      <div class="date-detail">${escapeHtml(d.detail)}</div>
+    </div>
+  `).join("") || '<p style="color:#999; font-size:13px;">No specific dates stated in this bill.</p>';
+
+  const actionsHtml = (decoded.what_you_can_do || []).map(a => `
+    <div class="action-item">
+      <div class="action-label">${escapeHtml(a.action)}</div>
+      <div class="action-where">${escapeHtml(a.where)}</div>
+    </div>
+  `).join("") || '<p style="color:#999; font-size:13px;">No specific action stated in this bill.</p>';
+
+  const sectionsHtml = (decoded.sections || []).map(s => `
+    <details class="source-block">
+      <summary>${escapeHtml(s.plain_explanation)}</summary>
+      <div class="official-text">${escapeHtml(s.official_text)}</div>
+      <div class="source-ref">Source: ${escapeHtml(s.source_ref)}</div>
+    </details>
+  `).join("");
+
+  const commentsHtml = comments.length === 0
+    ? '<p style="color:#999; font-size:13px;">No comments yet — be the first to share a view.</p>'
+    : comments.map(c => `
+      <div class="comment">
+        <span class="nickname">${escapeHtml(c.nickname)}</span>
+        <span class="time"> · ${new Date(c.created_at).toLocaleString()}</span>
+        <div class="body">${escapeHtml(c.body)}</div>
+      </div>
+    `).join("");
+
+  app.innerHTML = `
+    <span class="back-link" onclick="window.location.hash=''">&larr; All bills</span>
+    <h1>${escapeHtml(decoded.title || bill.title)}</h1>
+    <span class="stage">${escapeHtml(bill.stage || "introduced")}</span>
+
+    <div class="lang-toggle" style="margin-top:16px;">
+      <button class="${currentLang === 'en' ? 'active' : ''}" onclick="switchLang('en', ${bill.id})">English</button>
+      <button class="${currentLang === 'sw' ? 'active' : ''}" ${swAvailable ? '' : 'disabled title="Swahili not generated for this bill yet"'} onclick="switchLang('sw', ${bill.id})">Kiswahili</button>
+    </div>
+
+    <div class="section"><h2>What it is</h2><p>${escapeHtml(decoded.what_it_is)}</p></div>
+    <div class="section"><h2>Who it affects</h2><p>${escapeHtml(decoded.who_it_affects)}</p></div>
+    <div class="section"><h2>Why it matters</h2><p>${escapeHtml(decoded.why_it_matters)}</p></div>
+    <div class="section"><h2>Key dates</h2>${datesHtml}</div>
+    <div class="section"><h2>What you can do</h2>${actionsHtml}</div>
+
+    <div class="section">
+      <h2>Show me the source</h2>
+      ${sectionsHtml || '<p style="color:#999; font-size:13px;">No section-level citations available.</p>'}
+    </div>
+
+    <div class="section">
+      <h2>Where do you stand?</h2>
+      <div class="vote-row">
+        <div class="vote-btn support" onclick="castVote(${bill.id}, 'support')">
+          <span class="vote-count" id="supportCount">${bill.support_count}</span> Support
+        </div>
+        <div class="vote-btn oppose" onclick="castVote(${bill.id}, 'oppose')">
+          <span class="vote-count" id="opposeCount">${bill.oppose_count}</span> Oppose
+        </div>
+      </div>
+      <p style="font-size:11px; color:#999;">A simple tally, not a formal or legally binding petition.</p>
+    </div>
+
+    <div class="section">
+      <h2>Discussion</h2>
+      <div id="commentList">${commentsHtml}</div>
+      <div class="comment-form">
+        <input id="nicknameInput" placeholder="Nickname (optional)" maxlength="50">
+        <textarea id="commentInput" placeholder="Share your view on this bill..." maxlength="1000"></textarea>
+        <div id="commentError" class="error-msg" style="display:none;"></div>
+        <button onclick="postComment(${bill.id})">Post comment</button>
+      </div>
+    </div>
+
+    <p class="disclaimer">This is a demo. Comments are anonymous and lightly filtered, not moderated by a human. Nothing here is an official government channel.</p>
+  `;
+}
+
+function switchLang(lang, billId) {
+  currentLang = lang;
+  renderBillDetail(billId);
+}
+
+async function castVote(billId, position) {
+  try {
+    const result = await api(`/bills/${billId}/vote`, {
+      method: "POST",
+      body: JSON.stringify({ position }),
+    });
+    document.getElementById("supportCount").textContent = result.support_count;
+    document.getElementById("opposeCount").textContent = result.oppose_count;
+  } catch (e) {
+    alert("Could not record your vote: " + e.message);
+  }
+}
+
+async function postComment(billId) {
+  const nickname = document.getElementById("nicknameInput").value;
+  const body = document.getElementById("commentInput").value;
+  const errorEl = document.getElementById("commentError");
+  errorEl.style.display = "none";
+
+  if (!body.trim()) {
+    errorEl.textContent = "Write something before posting.";
+    errorEl.style.display = "block";
+    return;
+  }
+
+  try {
+    await api(`/bills/${billId}/comments`, {
+      method: "POST",
+      body: JSON.stringify({ nickname: nickname || "Anonymous", body }),
+    });
+    renderBillDetail(billId);
+  } catch (e) {
+    errorEl.textContent = e.message;
+    errorEl.style.display = "block";
+  }
+}
+
+route();
+</script>
+</body>
+</html>

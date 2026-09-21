@@ -1,0 +1,166 @@
+THE ARTIFICIAL INTELLIGENCE BILL, 2026
+SENATE BILLS NO. 4 OF 2026
+
+Sponsor: Sen. Karen Nyamu.
+Date of Publication: 19th February, 2026.
+Date of First Reading: 2nd April, 2026.
+Type of Bill: Ordinary Bill.
+
+PURPOSE OF THE BILL
+The principal object of the Bill is to regulate and govern artificial intelligence
+(AI) in Kenya, ensuring ethical, transparent, and accountable use while
+fostering innovation and safeguarding human rights, data protection, and
+public welfare. It also establishes the Office of the Artificial Intelligence
+Commissioner.
+
+BACKGROUND
+Artificial Intelligence has greatly transformed the manner in which data is
+synthesised and information reproduced for various purposes. Concern has
+been raised about the effects of its usage, including originality of academic and
+creative work, disruption of employment, and usage by minors. The Bill
+establishes a regulatory framework to leverage the benefits of AI while
+mitigating negative consequences.
+
+SCOPE
+Artificial Intelligence is defined as a machine-based system or technology using
+machine learning, data processing, algorithmic systems, or other methods to
+operate with varying levels of autonomy and adaptiveness, inferring outputs
+such as predictions, content, recommendations, or decisions from inputs.
+
+OBJECT AND PURPOSE OF THE BILL
+(a) provide a regulatory framework for artificial intelligence in Kenya;
+(b) ensure ethical and transparent artificial intelligence use;
+(c) support and foster innovation;
+(d) safeguard human rights and data protection of the public;
+(e) establish the Office of the Artificial Intelligence Commissioner;
+(f) promote artificial intelligence literacy and provide advice to county
+governments on its integration in devolved sectors; and
+(g) align Kenya with international artificial intelligence standards.
+
+THE OFFICE OF THE ARTIFICIAL INTELLIGENCE COMMISSIONER
+The Bill establishes the Office of the Artificial Intelligence Commissioner, a
+state office under Article 260(q) of the Constitution, independent in its
+functions, with perpetual succession and capacity to sue and be sued.
+
+Appointment: The Public Service Commission initiates recruitment, shortlists
+qualified applicants, conducts interviews, and nominates three qualified
+applicants in order of merit to the President, who nominates one for
+Parliament's approval.
+
+Qualifications: a masters degree in AI, computer science, ICT, engineering,
+data science, law, ethics or related field; at least ten years' experience in a
+relevant field (AI governance, data protection, technology policy, regulatory
+oversight, ethics, human rights, risk management); at least ten years managing
+public or private institutions; and compliance with Chapter Six of the
+Constitution.
+
+Term: five years, eligible for one further five-year term.
+
+Removal grounds: death, resignation, conviction with imprisonment exceeding
+six months, serious constitutional violation, gross misconduct, incapacity,
+incompetence, or bankruptcy — following a complaint to the Public Service
+Commission and an opportunity to respond.
+
+FUNCTIONS OF THE OFFICE
+Overseeing implementation and enforcement of the Act; conducting risk
+assessments of AI systems; performing conformity audits and post-market
+surveillance; assessing high-risk AI systems for compliance; developing
+policies, guidelines and standards on AI governance, ethics and safety;
+promoting responsible development and deployment of AI; establishing
+regulatory sandboxes for safe innovation and testing; receiving and
+investigating AI-related complaints; maintaining a public register of high-risk
+AI systems (including those used by county governments); advising national
+and county governments on AI policy integration; promoting AI literacy and
+capacity building; and conducting research and monitoring trends.
+
+ADMINISTRATIVE POWERS
+The Office may inspect premises, systems and records; require information
+from AI providers; issue enforcement notices or impose fines; summon persons
+to give evidence; collaborate with international bodies; establish an appeals
+mechanism; and delegate powers to authorised officers.
+
+THE ADVISORY COMMITTEE ON ARTIFICIAL INTELLIGENCE
+A multi-stakeholder body advising the Commissioner, comprising: the
+Commissioner (Chairperson); a Ministry of ICT representative; a
+representative of the Office of the Data Protection Commissioner; a NACOSTI
+representative; two AI ethics/human rights experts appointed by the Cabinet
+Secretary (three-year renewable term); two persons of each gender nominated
+by the Council of Governors; and one civil society representative with
+technology or human rights expertise. Meets at least four times a year.
+
+RISK CLASSIFICATION OF AI SYSTEMS
+The Commissioner classifies AI systems by risk to health, safety, fundamental
+rights, environment or societal welfare into four categories:
+(a) unacceptable risk — systems posing severe threats;
+(b) high risk — systems used in critical sectors including healthcare, education,
+agriculture, finance, security, employment or public administration;
+(c) limited risk — systems with moderate risks; and
+(d) minimal risk — systems with negligible risks.
+
+OBLIGATIONS FOR HIGH-RISK AI SYSTEMS
+Providers and deployers must: conduct risk and human rights impact
+assessments before deployment and implement mitigation measures; ensure
+transparency, traceability and explainability of decision-making; keep
+datasets and system documentation; comply with the Data Protection Act;
+ensure robustness and cybersecurity; and obtain consent when using a
+person's likeness or voice.
+
+TRANSPARENCY MEASURES
+AI providers and deployers must disclose the nature and purpose of the
+system, how much automation is involved, and measures taken to mitigate
+bias. Users must ensure human intervention rights where automated
+decisions affect individuals.
+
+WORKFORCE IMPACT OBLIGATIONS
+Where AI impacts employment, providers must conduct workforce impact
+assessments (including potential job displacement) and implement mitigation
+measures including reskilling programmes with national and county
+government agencies. The Commissioner shall develop guidelines on
+workforce transition, vocational training partnerships, and incentives for
+job-creating AI adoption.
+
+OFFENCES AND PENALTIES
+A person commits an offence for: deploying an unacceptable-risk AI system;
+deploying a high-risk system without required risk assessment/mitigation;
+failing disclosure/transparency obligations; participating in a regulatory
+sandbox without adhering to conditions; failing to conduct a workforce impact
+assessment; contravening ethical guidelines causing bias, discrimination or
+harm; misusing AI in the public sector to the prejudice of public rights;
+obstructing the Office; or generating/distributing AI content (including
+synthetic media) using a person's image, voice or likeness without consent
+where it causes harm, misinformation, defamation or privacy infringement.
+
+Penalties: for the more serious offences, a fine not exceeding five million
+shillings or imprisonment not exceeding two years, or both. For lesser
+offences, a fine not exceeding one million shillings or imprisonment not
+exceeding six months, or both. Where committed by a body corporate, any
+director or officer with knowledge who failed to exercise due diligence is also
+guilty.
+
+REGULATIONS
+The Cabinet Secretary, in consultation with the Commissioner, may make
+regulations on: risk classification criteria; risk assessment processes; regulatory
+sandbox conditions; ethical guideline content and review; data governance
+frameworks; enforcement and appeals procedures; public participation and AI
+literacy programmes; fees and administrative procedures; consent and
+labelling of AI-generated content; and exceptions for legitimate image
+manipulation uses.
+
+PERIODIC REVIEW
+Every three years, the Cabinet Secretary must review the Act, consult
+stakeholders, assess new risks, and report to Parliament with recommended
+amendments, within six months of completing the review.
+
+WAY FORWARD / PUBLIC PARTICIPATION
+The Bill was read a First Time in the Senate on 2nd April, 2026. Pursuant to
+Standing Order 148 of the Senate Standing Orders, the Committee was
+required to submit its report to the Senate within thirty calendar days of the
+Bill's committal to the Committee — by 2nd May, 2026.
+
+Comments on the Bill may be submitted to the Office of the Clerk of the
+Senate, 1st Floor, Main Parliament Buildings, Nairobi, Kenya, through P.O. Box
+41842-00100, Nairobi, Kenya, or by email to
+ictcommittee.senate@parliament.go.ke.
+
+Note: this digest does not have official legal status; the enacted Bill text
+remains authoritative.

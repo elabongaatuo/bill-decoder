@@ -1,0 +1,83 @@
+{
+  "title": "Mswada wa Ujasusi Bandia (Artificial Intelligence), 2026",
+  "what_it_is": "Mswada huu unaweka sheria za kusimamia ujasusi bandia (AI) nchini Kenya na kuanzisha Ofisi ya Kamishna wa Ujasusi Bandia. Unaweka mifumo ya AI katika makundi kulingana na hatari, unaweka viwango vya uwazi na haki za binadamu, na kusimamia matumizi ya AI kazini na katika huduma za umma.",
+  "who_it_affects": "Unawaathiri watengenezaji wa AI, kampuni na mashirika ya serikali yanayotumia mifumo ya kujiendesha, wafanyakazi ambao kazi zao zinaweza kuchukuliwa na AI, na wananchi ambao data, sauti, au picha zao hutumiwa na AI.",
+  "why_it_matters": "Unaweka kanuni kali dhidi ya matumizi mabaya ya AI—kama vile kutengeneza picha au sauti bandia za watu bila idhini, mifumo ya kibaguzi, na kupoteza kazi ghafla—huku ukianzisha chombo cha kusimamia usalama wa teknolojia nchini Kenya.",
+  "key_dates": [
+    {
+      "label": "Tarehe ya Kuchapishwa",
+      "detail": "19 Februari, 2026"
+    },
+    {
+      "label": "Tarehe ya Usomaji wa Kwanza Bungeni (Seneti)",
+      "detail": "2 Aprili, 2026"
+    },
+    {
+      "label": "Tarehe ya Mwisho ya Ripoti ya Kamati ya Seneti",
+      "detail": "2 Mei, 2026"
+    }
+  ],
+  "what_you_can_do": [
+    {
+      "action": "Tuma maoni yako kuhusu Mswada huu",
+      "where": "Ofisi ya Karani wa Seneti, Ghorofa ya 1, Majengo ya Bunge, Nairobi, Kenya, S.L.P 41842-00100, Nairobi, Kenya, au kwa barua pepe kwa ictcommittee.senate@parliament.go.ke"
+    }
+  ],
+  "sections": [
+    {
+      "official_text": "Establishes the Office of the Artificial Intelligence Commissioner as an independent state office with perpetual succession and power to sue and be sued.",
+      "plain_explanation": "Inaanzisha ofisi huru ya serikali ya kusimamia sheria za AI, kuchunguza malalamishi, na kuhakikisha sheria zinafuatwa kotenchini.",
+      "source_ref": "The Office of the Artificial Intelligence Commissioner"
+    },
+    {
+      "official_text": "Functions include conducting risk assessments, performing conformity audits, assessing high-risk AI, developing guidelines, maintaining a public register of high-risk AI, and investigating complaints.",
+      "plain_explanation": "Kamishna wa AI atachunguza mifumo ya AI, kushughulikia malalamishi ya umma, kuchapisha orodha ya teknolojia hatari za AI, na kuunda kanuni za maadili.",
+      "source_ref": "Functions of the Office"
+    },
+    {
+      "official_text": "Administrative powers include inspecting premises, demanding information from AI providers, issuing enforcement notices or fines, and summoning persons to give evidence.",
+      "plain_explanation": "Ofisi hii ina mamlaka ya kisheria kukagua makampuni ya teknolojia, kudai rekodi, kuita watu kutoa ushahidi, na kutoa adhabu za kifedha.",
+      "source_ref": "Administrative Powers"
+    },
+    {
+      "official_text": "Establishes the Advisory Committee on Artificial Intelligence comprising the Commissioner, ministry, ethics, human rights, NACOSTI, county, and civil society representatives.",
+      "plain_explanation": "Inaunda baraza la ushauri lenye wataalamu na maafisa wa serikali ili kumshauri Kamishna kuhusu jinsi ya kusimamia AI na sera za umma.",
+      "source_ref": "The Advisory Committee on Artificial Intelligence"
+    },
+    {
+      "official_text": "Classifies AI systems into four risk levels: unacceptable risk, high risk (critical sectors like health, finance, employment),limited risk, and minimal risk.",
+      "plain_explanation": "Programu za AI zitapangwa kulingana na viwango vya hatari. Sheria kali zitatumika katika maeneo nyeti kama ajira, afya, nabenki, na AI hatari zaidi itapigwa marufuku.",
+      "source_ref": "Risk Classification of AI Systems"
+    },
+    {
+      "official_text": "High-risk AI providers must conduct human rights impact assessments, ensure traceability, comply with data protection laws, and obtain consent before using a person's likeness or voice.",
+      "plain_explanation": "Wanaotumia zana nyeti za AI lazima wachunguze kama zitaumiza haki za binadamu, wafuate sheria za faragha ya data, na wapate idhini kabla ya kutumia picha au sauti ya mtu.",
+      "source_ref": "Obligations for High-Risk AI Systems"
+    },
+    {
+      "official_text": "AI deployers must disclose automation levels, explain decision-making, mitigate bias, and ensure rights to human intervention in automated decisions.",
+      "plain_explanation": "Kampuni lazima ziwaambie wananchi wakati AI inatumiwa kuwafanyia maamuzi, zihakikishe programu haina upendeleo, na zikubali binadamu kukagua maamuzi hayo.",
+      "source_ref": "Transparency Measures"
+    },
+    {
+      "official_text": "Providers must conduct workforce impact assessments regarding potential job displacement and implement mitigation measures, including reskilling programs.",
+      "plain_explanation": "Ikiwa teknolojia ya AI inatishia kufuta kazi, waajiri lazima wachunguze hali hiyo na kusaidia kuwapa wafanyakazi ujuzi mpya.",
+      "source_ref": "Workforce Impact Obligations"
+    },
+    {
+      "official_text": "Prohibits generating or distributing AI content using a person's image, voice, or likeness without consent where it causes harm, misinformation, defamation, or privacy infringement.",
+      "plain_explanation": "Ni kinyume cha sheria kutengeneza au kusambaza picha au sauti bandia ya mtu bila idhini yake ikiwa inaleta madhara, uongo,au kuvunja faragha.",
+      "source_ref": "Offences and Penalties"
+    },
+    {
+      "official_text": "Serious offences carry fines not exceeding five million shillings, imprisonment up to two years, or both. Corporate directors with knowledge are also liable.",
+      "plain_explanation": "Ukiukaji mkubwa wa sheria unaweza kuleta faini ya hadi shilingi milioni tano, jela hadi miaka miwili, au yote mawili. Wakurugenzi wa kampuni wanaoweza kuwajibishwa ikiwa walijua kuhusu ukiukaji huo.",
+      "source_ref": "Penalties"
+    },
+    {
+      "official_text": "The Cabinet Secretary must review the Act every three years, consult stakeholders, assess new risks, and report to Parliament within six months.",
+      "plain_explanation": "Serikali lazima ipitie upya na kusasisha sheria hii ya AI kila baada ya miaka mitatu ili iendane na kasi ya teknolojia.",
+      "source_ref": "Periodic Review"
+    }
+  ]
+}

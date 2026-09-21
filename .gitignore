@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+*.db
+venv/
+.venv/
+data/_last_fetch_debug.html
