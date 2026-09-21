@@ -61,7 +61,7 @@ live, since the question isn't known in advance.
 ## Setup
 
 ```bash
-git clone <this repo>
+git clone https://github.com/elabongaatuo/bill-decoder.git
 cd bill-decoder
 python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
