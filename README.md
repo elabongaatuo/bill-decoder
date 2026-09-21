@@ -1,43 +1,50 @@
 # Bill Bridge
 
-Decodes Kenyan parliamentary bills into plain language — in English or
-Kiswahili — accessible via USSD, SMS, and a no-signup web app. Built as a
-hackathon proof of concept for the OSF "Information You Can Trust" challenge
-(Transparency & Accountability track).
+Decodes Kenyan parliamentary bills into plain language, in English or
+Kiswahili, and makes them reachable over USSD, SMS, and a no-signup web
+app. Built as a hackathon proof of concept for the OSF "Information You
+Can Trust" challenge (Transparency & Accountability track).
 
 ## What actually works right now
 
-- **Decode pipeline** (`decoder.py`): any bill's text → structured plain-language
-  summary (what it is, who it affects, why it matters, key dates, what you can
-  do), with every claim cited back to a specific section of the source.
-- **Translation** (`translator.py`): English → Kiswahili, with the actual bill
-  wording (`official_text`) deliberately left untranslated for source fidelity,
-  while explanations are translated for accessibility.
-- **USSD** (`ussd_handler.py` + `main.py`): browse bills, search by topic, get
-  a summary by SMS in English or Kiswahili, subscribe to updates, support/oppose
-  a bill — tested live against Africa's Talking's sandbox.
-- **SMS** (`sms_client.py`): summaries, notifications, petition confirmations,
-  and free-text question-answering (`qa.py`) — ask a question about a bill,
-  get an answer sourced from its decoded content.
-- **Web app** (`web/index.html`): browse bills, read the full decode with
-  expandable "show me the source" citations, vote support/oppose, and post
-  anonymous comments — no sign-in required.
-- **Live extraction proof of concept** (`extract_one_bill.py`): a real, working
-  script that finds a bill on Kenya Law's live site, downloads its PDF, and
-  extracts the text — see "Data sourcing" below for exactly what this does and
-  does not cover.
+- **Decode pipeline** (`decoder.py`): any bill's text turns into a
+  structured plain-language summary (what it is, who it affects, why it
+  matters, key dates, what you can do), and every claim cites back to a
+  specific section of the source.
+- **Translation** (`translator.py`): English to Kiswahili. The actual
+  bill wording (`official_text`) stays untranslated on purpose, for
+  source fidelity, while explanations get translated for accessibility.
+- **USSD** (`ussd_handler.py` + `main.py`): browse bills, **search by
+  topic** (`health`, `technology`, `national`, and so on, matched
+  against each bill's tags), get a summary by SMS in English or
+  Kiswahili, subscribe to updates, support or oppose a bill. Tested live
+  against Africa's Talking's sandbox. The topic search exists so someone
+  only sees bills tagged to what they actually care about, instead of
+  scrolling through everything Parliament happens to be doing that week.
+  It's USSD-only right now. Extending it to the web app's bill list is a
+  small, near-term addition (see Roadmap).
+- **SMS** (`sms_client.py`): summaries, notifications, petition
+  confirmations, and free-text question-answering (`qa.py`). Ask a
+  question about a bill, get an answer sourced from its decoded content.
+- **Web app** (`web/index.html`): browse bills, read the full decode
+  with expandable "show me the source" citations, vote support or
+  oppose, post anonymous comments. No sign-in required.
+- **Live extraction proof of concept** (`extract_one_bill.py`): a real,
+  working script that finds a bill on Kenya Law's live site, downloads
+  its PDF, and extracts the text. See "Data sourcing" below for what
+  this covers and what it doesn't.
 
 ## Architecture, in one paragraph
 
-Kenya Law (and, where available, Mzalendo Trust's Bill Tracker for
-stage/sponsor data) feed a shared SQLite database. The decode/translate
-pipeline reads bill text and writes structured output back into that same
-database — this happens once, ahead of time, not live during a USSD session.
-USSD/SMS and the web app are independent front doors that both read from that
-one database, which is why a citizen dialing in gets an instant response
-rather than waiting on a live AI call (the one exception is SMS question-
-answering, which does call the model live, since the question isn't known in
-advance).
+Kenya Law, and, where available, Mzalendo Trust's Bill Tracker for
+stage and sponsor data, feed a shared SQLite database. The
+decode/translate pipeline reads bill text and writes structured output
+back into that same database. This happens once, ahead of time, not
+live during a USSD session. USSD/SMS and the web app are independent
+front doors that both read from that one database, so a citizen dialing
+in gets an instant response instead of waiting on a live AI call. The
+one exception is SMS question-answering, which does call the model
+live, since the question isn't known in advance.
 
 ## Prerequisites
 
@@ -122,7 +129,8 @@ running the API somewhere else).
 
 ## Data sourcing — what's automated, what's manual
 
-Being direct about this rather than implying more automation than exists:
+Here's the honest breakdown, rather than implying more automation than
+actually exists:
 
 | Piece | Automated? |
 |---|---|
@@ -136,21 +144,24 @@ Being direct about this rather than implying more automation than exists:
 
 ### About `extract_one_bill.py`
 
-This is a genuine, live proof of concept — not a mockup. Run against
-`TARGET_TITLE = "The National Coroners Service Bill, 2026"`, it:
-1. Fetches Kenya Law's live bills listing and finds the matching entry by
-   link text (not by guessing URL patterns).
-2. Follows it to the bill's page, which Kenya Law renders as a JS-loaded PDF
-   viewer for bills (confirmed by inspecting the real page — the actual PDF
-   URL lives in a `data-pdf="..."` attribute, not a plain link).
+This one's a genuine, live proof of concept. Not a mockup. Run against
+`TARGET_TITLE = "The National Coroners Service Bill, 2026"`, here's what
+it actually does:
+1. Fetches Kenya Law's live bills listing and finds the matching entry
+   by link text, not by guessing at URL patterns.
+2. Follows it to the bill's page, which Kenya Law renders as a
+   JS-loaded PDF viewer for bills. Confirmed by inspecting the real
+   page: the actual PDF URL lives in a `data-pdf="..."` attribute, not
+   a plain link.
 3. Downloads and extracts the PDF's text via PyMuPDF.
-4. Attempts a Mzalendo match (best-effort; degrades gracefully if it fails).
+4. Attempts a Mzalendo match. Best-effort, and it degrades gracefully
+   if that fails.
 5. Writes the result to `data/<slug>_extracted.txt`.
 
-Verified: this extracted 63,753 characters from the live Coroners Bill PDF,
-matching the manually-sourced version already in this repo. Change
-`TARGET_TITLE` to try another bill — if it can't find a link, it prints every
-bill-like link it *did* find, to make retargeting fast.
+Verified: this pulled 63,753 characters from the live Coroners Bill
+PDF, and it matched the manually-sourced version already in this repo.
+Change `TARGET_TITLE` to try another bill. If it can't find a link, it
+prints every bill-like link it *did* find, so retargeting is fast.
 
 ## Utility / diagnostic scripts (kept intentionally, not cleanup candidates)
 
@@ -164,35 +175,87 @@ bill-like link it *did* find, to make retargeting fast.
 
 ## A real bug you may hit, and why it's already handled
 
-On some Windows machines, Python's TLS stack fails to connect to Africa's
-Talking's sandbox API (`SSL: WRONG_VERSION_NUMBER`) even though curl and
-browsers connect fine — a genuine Python/OpenSSL 3.x vs. this specific
-server's TLS behavior mismatch, not a bug in this code. `ssl_patch.py`
-addresses part of it; `sms_client.py`'s `send_sms()` also automatically falls
-back to shelling out to `curl.exe` if the normal path fails with an SSL
-error, verified working end-to-end. If you hit this on a fresh machine and
-the fallback doesn't trigger, run `check_ssl_patch.py` for a direct diagnosis.
+On some Windows machines, Python's TLS stack fails to connect to
+Africa's Talking's sandbox API (`SSL: WRONG_VERSION_NUMBER`), even
+though curl and browsers connect just fine. That's a genuine
+Python/OpenSSL 3.x mismatch with this specific server's TLS behavior,
+not a bug in this code. `ssl_patch.py` addresses part of it.
+`sms_client.py`'s `send_sms()` also falls back automatically to
+shelling out to `curl.exe` if the normal path fails with an SSL error,
+and that fallback is verified working end to end. If you hit this on a
+fresh machine and the fallback doesn't trigger, run `check_ssl_patch.py`
+for a direct diagnosis.
 
-## What's deliberately not built 
+## Roadmap: local language and cross-country scalability
 
-- **Live/scheduled scraping** — `extract_one_bill.py` proves the mechanism
-  works for one bill on demand; an unattended sync job polling Kenya Law on a
-  schedule is future work, deliberately out of scope for a 2-day build.
-- **Auto-feeding extraction into the decode pipeline** — the two pieces exist
-  and both work, but aren't wired together yet; connecting them is a small,
-  named next step, not a hidden gap.
-- **A formal, legally-binding petition mechanism** — the support/oppose
-  feature is an honest, simple tally, stated as such in the web app itself.
-- **Real OCR** — text-layer extraction (via PyMuPDF) covers bills that have
-  one, which most current Kenya Law bills do; a true OCR fallback for scanned
-  image-only PDFs isn't built.
-- **A maintained translation terminology glossary** — one real ambiguity
-  ("Wakorona" vs. COVID-19 associations) was caught through testing and fixed
-  via an explicit prompt rule; a production version would need this to scale
-  as a proper glossary, reviewed by a fluent Kiswahili speaker, rather than
-  one-off prompt patches.
-- **Human moderation** for web app comments — currently a length cap and a
-  small denylist only, stated plainly in the app's own UI.
+**Local language expansion (Sheng, Nigerian Pidgin, and beyond).** The
+translation pipeline already proved it generalizes. Adding Kiswahili
+meant writing one new prompt in `translator.py`, not rebuilding
+anything. That same pattern extends to Sheng, Nairobi's urban
+vernacular, which a lot of younger, lower-income Kenyans use daily and
+actually code-switch into more naturally than formal Kiswahili. It
+extends to Nigerian Pidgin too, for reach beyond Kenya. Each one needs
+the same care we already gave Kiswahili: real terminology checked
+against how it's actually used, not assumed, and a native or fluent
+speaker reviewing the output before anyone trusts it. That's exactly
+the process that caught the "Wakorona"/COVID-19 ambiguity during this
+build. Not a one-time task to skip next time.
+
+**Scalability to other democratic countries, checked rather than
+assumed.** Kenya's Parliament follows the Westminster model: First
+Reading, Second Reading, Committee Stage, Third Reading, Assent.
+Inherited from British colonial-era parliamentary practice. This isn't
+unique to Kenya at all. Nigeria's National Assembly follows almost the
+exact same structure: First Reading, Second Reading, Committee Stage
+with public hearings, Third Reading, Presidential Assent, with a
+30-day signing window and a two-thirds override if the President
+vetoes [a][b]. The same three-reading pattern holds, with local
+variation, across the UK, Canada, Australia, Uganda, India's Lok Sabha,
+and most Commonwealth legislatures [c][d].
+
+So the decode mechanism itself, bill text in, structured
+plain-language summary with section citations out, should generalize
+to these countries with minimal change. The underlying document
+structure (numbered clauses, readings, committee stages) is
+consistent. One honest limit worth stating plainly: Kenya's
+constitutional mandate for public participation (Article 118) is an
+unusually strong, explicit legal requirement. Not every Commonwealth
+country entrenches citizen input this firmly, even though most provide
+some form of committee-stage public hearing. So the "what you can do
+and where" part of a decoded summary would need light, per-country
+adaptation, not a rebuild, to point citizens at whatever that
+country's actual process actually offers.
+
+<sub>Sources: [a] Mondaq, "A Summary of the Legislative Process in Nigeria,"
+2022 — mondaq.com/nigeria/constitutional-administrative-law/1222558.
+[b] National Assembly of Nigeria, legislative process portal —
+nass.gov.ng/themes/newnass/legislative-process.html.
+[c] Wikipedia, "Reading (legislature)" — en.wikipedia.org/wiki/Reading_(legislature).
+[d] Wikipedia, "Third reading" — modeldiplomat.com/learn/glossary/third-reading
+and en.wikipedia.org equivalents.</sub>
+
+## What's deliberately not built (named, not hidden)
+
+- **Live/scheduled scraping.** `extract_one_bill.py` proves the
+  mechanism works for one bill on demand. An unattended sync job
+  polling Kenya Law on a schedule is future work, left out on purpose
+  for a two-day build.
+- **Auto-feeding extraction into the decode pipeline.** Both pieces
+  exist and both work, but they're not wired together yet. Connecting
+  them is a small, named next step. Not a hidden gap.
+- **A formal, legally-binding petition mechanism.** The support/oppose
+  feature is an honest, simple tally. Stated as such in the web app
+  itself.
+- **Real OCR.** Text-layer extraction, via PyMuPDF, covers bills that
+  have one, and most current Kenya Law bills do. A true OCR fallback
+  for scanned, image-only PDFs isn't built.
+- **A maintained translation terminology glossary.** One real
+  ambiguity, "Wakorona" and its COVID-19 associations, got caught
+  through testing and fixed via an explicit prompt rule. A production
+  version would need this to scale as a proper glossary, reviewed by a
+  fluent Kiswahili speaker, rather than one-off prompt patches.
+- **Human moderation** for web app comments. Right now it's a length
+  cap and a small denylist, nothing more, and the app says so plainly.
 
 ## Environment variables
 
